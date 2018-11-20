@@ -7,7 +7,9 @@
 </head>
 <body>
   <?php 
-  session_start();
+  if(!isset($_SESSION)) { 
+    session_start(); 
+  } 
   if(empty($_SESSION['cliente'])){ 
     ?>  
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">

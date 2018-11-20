@@ -15,7 +15,9 @@ $linha = mysqli_fetch_array($resultado);
 if($email == $linha['email'] && $senha == $linha['senha']){
 
     //Inicia a sessão
-    session_start();
+    if(!isset($_SESSION)) { 
+        session_start(); 
+    } 
 
     include_once("../../administrador/funcoes.php");
     
@@ -24,7 +26,12 @@ if($email == $linha['email'] && $senha == $linha['senha']){
     $cliente = mysqli_fetch_array($resultado);
     $_SESSION['cliente'] = $cliente;
 
-    header("Location: ../index.php");    
+    if(!empty($_SESSION['carrinho'])) {
+        header("Location: ../../venda/carrinhoDeCompras.php");    
+    } else {
+        header("Location: ../index.php");    
+    }
+    
 } else {
     $message = urlencode("Usuário ou senha incorretos.");
     header("Location: ../index.php?message=".$message);

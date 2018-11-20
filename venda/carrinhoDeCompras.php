@@ -1,10 +1,6 @@
 <?php include_once("../administrador/funcoes.php"); 
 $id = $_GET['id'];
 
-if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
 ?>
 <html>
 <head>
@@ -73,7 +69,7 @@ if (!empty($_SESSION['carrinho'])) {
                     <a class="btn btn-block btn-light" href="../index.php">Comprar mais itens</a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Finalizar compra</button>
+                    <a class="btn btn-lg btn-block btn-success text-uppercase" href="action/salvarVenda.php">Finalizar compra</a>
                 </div>
             </div>
         </div>
@@ -85,6 +81,11 @@ if (!empty($_SESSION['carrinho'])) {
     <div class="jumbotron">
         <h2 class="text-center">Não há itens no carrinho :(</h2>  
     </div>
+    <div class="container" style="text-align: center">
+        <a class="btn btn-primary btn-lg" href="../index.php">Comprar</a>    
+    </div>
+    
+    
 <?
 }
 ?>

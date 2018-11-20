@@ -54,10 +54,10 @@ $id_fornecedor = $linha['id_fornecedor'];
         ?>
         <input type="text" class="form-control" name="valor" disabled="true" value="<?php echo $linha['nome'] ?>">
       </div>
+      <br>
       <a class="btn btn-success mb-2" href="action/adicionarItem.php?&id=<?=$id?>">Adicionar ao carrinho</a> 
-    <br>
 </main>
-  
+<br>  
 <footer class="footer">
   <div class="container">
     <span class="text-muted">Sistema Estoque </span>

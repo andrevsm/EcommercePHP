@@ -25,7 +25,7 @@
         <a class="navbar-brand" href="../usuario/index.php">Minha conta</a>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="../../index.php">Produtos</a></li>
+            <li class="nav-item active"><a class="nav-link" href="../index.php">Produtos</a></li>
                 <li class="nav-item active"><a class="nav-link" href="../usuario/meusPedidos.php">Meus pedidos</a></li>
                 <li class="nav-item active">
                 <form method="post" class="navbar-nav mr-auto" action="../usuario/action/logout.php">
