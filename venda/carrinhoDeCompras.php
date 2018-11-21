@@ -57,6 +57,7 @@ if (!empty($_SESSION['carrinho'])) {
                             <td>
                             <strong>Total</strong>
                             <label>R$ <?=$total?></label>
+                            <?php $_SESSION['total'] = $total; ?>
                             </td>
                         </tr>
                     </tbody>
