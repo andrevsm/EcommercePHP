@@ -35,7 +35,7 @@ if(!empty($cliente)){
         }
         
         mysqli_close($conexao);
-
+        unset($_SESSION['carrinho']);
         // Redireciona para a lista
         header('Location: ../../usuario/meusPedidos.php');        
         exit();

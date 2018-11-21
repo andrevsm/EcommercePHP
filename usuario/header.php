@@ -22,7 +22,7 @@
     } else {
     ?>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="usuario/index.php">Minha conta</a>
+        <a class="navbar-brand" href="index.php">Minha conta</a>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="../index.php">Produtos</a></li>

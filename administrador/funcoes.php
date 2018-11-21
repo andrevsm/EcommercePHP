@@ -84,4 +84,31 @@ function listarFornecedorPorId($id) {
     mysqli_close($conexao);
     return $resultado;
 }
+function listarVendaPorIdCliente($id) {
+    $conexao = conectar();
+    $query = "SELECT * FROM venda WHERE id_cliente=$id";
+    $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
+    // Fecha a conexão
+    mysqli_close($conexao);
+    return $resultado;
+}
+function listarUltimaVendaPorIdCliente($id) {
+    $conexao = conectar();
+    $query = "SELECT * FROM venda WHERE id_cliente=$id ORDER BY id_venda DESC LIMIT 1";
+    $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
+    // Fecha a conexão
+    mysqli_close($conexao);
+    return $resultado;
+}
+function listarItemVendaPorId($id) {
+    $conexao = conectar();
+    $query = "SELECT quantidade, produto.nome, produto.descricao, produto.valor,
+        categoria.nome AS nomeCategoria, fornecedor.nome AS nomeFornecedor 
+        FROM itemVenda INNER JOIN produto ON itemVenda.id_produto = produto.id_produto INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria
+        INNER JOIN fornecedor ON produto.id_fornecedor = fornecedor.id_fornecedor WHERE id_venda=$id";
+    $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
+    // Fecha a conexão
+    mysqli_close($conexao);
+    return $resultado;
+}
 ?>

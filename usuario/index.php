@@ -49,7 +49,8 @@
         session_start(); 
     } 
     $cliente = $_SESSION['cliente'];
-    
+    //Pego id do cliente
+    $idCliente = $cliente['id_cliente'];
   ?>
   <div class="container-fluid">
     <div class="jumbotron text-center">
@@ -69,7 +70,7 @@
             <p>Cpf: <label><?=$cliente['cpf']?></label> </p>
             <p>Data de Nascimento: <label><?=$cliente['dt_nascimento']?></label> </p>
             <p>E-mail: <label><?=$cliente['email']?></label> </p>
-            <a href="editarCliente.php" class="btn btn-primary  w-25">Editar</a>
+            <a href="editarCliente.php?id=<?=$idCliente?>" class="btn btn-primary  w-25">Editar</a>
           </div>
         </div>
 
@@ -77,11 +78,25 @@
           <div class="card-header">
             <h3 class="card-title">Últimos Pedidos</h3>  
           </div>
+          <?php 
+            include_once("../administrador/funcoes.php");
+            
+            //Busco a venda
+            $resultado = listarUltimaVendaPorIdCliente($idCliente);
+            $linha = mysqli_fetch_array($resultado);
+          ?>
           <div class="card-body">
-            <p>Número do pedido: <label>numeros</label></p>
-            <p>Produto: <label>nomeDoproduto</label></p>
-            <p>Valor total: R$<label>valor</label></p>
+            <? if (!empty($linha)) {
+              ?>
+            <p>Número do pedido: <label><?=$linha['id_venda']?></label></p>
+            <p>Valor total: R$ <label><?=$linha['valor']?></label></p>
             <a href="meusPedidos.php" class="btn btn-primary  w-25">Ver todos</a>
+            <? } else {
+              ?>
+              <p>Nenhum pedido realizado :(</p>
+            <? 
+            }
+            ?>
           </div>
         </div>
       </div>  
