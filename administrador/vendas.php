@@ -1,58 +1,55 @@
-<?php
-$id = $_GET['id'];
-
-if(!isset($_SESSION)) { 
-    session_start(); 
-} 
-?>
-
 <html>
 <head>
-  <title>Pedidos</title>
+  <title>Fornecedores</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <meta charset="utf-8"> 
   <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
 
 <body>
-  <?php 
-    include_once("header.php"); 
-    include_once("../administrador/funcoes.php"); 
-   ?>  
+  <?php include_once("header_admin.php"); ?>  
+  <?php include_once("funcoes.php"); ?>  
   <br>
   <div class="container">
-    <h1 style="text-align: center">Detalhes do Pedido</h1>
-    <a class="btn btn-secondary" href="meusPedidos.php">Voltar</a>  
+    <h1 style="text-align: center">Lista de Vendas</h1>
     <br> 
     <table class="table table-hover" style="text-align: center">
       <br>
       <tr>
-        <td><b>Produto</b></td>
-        <td><b>Descrição</b></td>
-        <td><b>Valor</b></td>
-        <td><b>Quantidade</b></td>
-        <td><b>Categoria</b></td>
-        <td><b>Fornecedor</b></td>
+      <td><b>ID</b></td>
+      <td><b>Produtos</b></td>
+      <td><b>Valor</b></td>
+      <td><b>Cliente</b></td>
+      <td><b>Ações</b></td>
       </tr>
       <?php
-        $resultado = listarItemVendaPorId($id);
-        // print_r($resultado);
-        // $linha1 = mysqli_fetch_array($resultado);
-        // print_r($linha1);
-        // exit();
+        $resultado = listarVendas();
         while ($linha = mysqli_fetch_array($resultado)) {
       ?>
         <tr>
-            <td><?php echo $linha['nome']; ?></td>
-            <td><?php echo $linha['descricao']; ?></td>
+            <td><?php echo $linha['id_venda']; ?></td>
+            <td>
+            <?
+            $resultadoItemVenda = listarItemVendaPorId($linha['id_venda']);
+            while ($linhaItem = mysqli_fetch_array($resultadoItemVenda)) {
+            ?>
+            - <?php echo $linhaItem['nome'];?>
+            
+            <? } ?>
+            </td>
             <td>R$ <?php echo $linha['valor']; ?></td>
-            <td><?php echo $linha['quantidade']; ?></td>
-            <td><?php echo $linha['nomeCategoria']; ?></td>
-            <td><?php echo $linha['nomeFornecedor']; ?></td>
+            <td>
+            <?
+            $resultadoCliente = listarClientePorId($linha['id_cliente']);
+            $linhaCliente = mysqli_fetch_array($resultadoCliente);
+            echo $linhaCliente['nome'];
+            ?>
+            </td>
+            <td><a class="btn btn-primary mb-2" href="detalhesPedido.php?id=<?=$linha['id_venda']?>">Ver detalhes</a></td>
         </tr>
       <?php
       }
-      ?>      
+      ?>
     </table>
   </div> 
 

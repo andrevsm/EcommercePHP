@@ -6,6 +6,7 @@
         <li class="nav-item active"><a class="nav-link" href="fornecedores.php">Fornecedores</a></li>
         <li class="nav-item active"><a class="nav-link" href="produtos.php">Produtos</a></li>
         <li class="nav-item active"><a class="nav-link" href="categorias.php">Categorias</a></li>
+        <li class="nav-item active"><a class="nav-link" href="vendas.php">Vendas</a></li>
       </ul>
       <div class="navbar-nav mt-2 mt-md-0"><a class="navbar nav-link active font-weight-bold" href="../index.php">Área de Vendas</a></div>
     </div>

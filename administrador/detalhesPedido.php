@@ -16,13 +16,13 @@ if(!isset($_SESSION)) {
 
 <body>
   <?php 
-    include_once("header.php"); 
-    include_once("../administrador/funcoes.php"); 
+    include_once("header_admin.php"); 
+    include_once("funcoes.php"); 
    ?>  
   <br>
   <div class="container">
     <h1 style="text-align: center">Detalhes do Pedido</h1>
-    <a class="btn btn-secondary" href="meusPedidos.php">Voltar</a>  
+    <a class="btn btn-secondary" href="vendas.php">Voltar</a>  
     <br> 
     <table class="table table-hover" style="text-align: center">
       <br>

@@ -8,7 +8,7 @@ function conectar() {
 }
 function listarClientes() {
     $conexao = conectar();
-    $query = "SELECT id_cliente, nome, cpf, dt_nascimento, email, senha FROM cliente ORDER BY id_cliente;";
+    $query = "SELECT * FROM cliente ORDER BY id_cliente;";
     $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
     // Fecha a conexão
     mysqli_close($conexao);
@@ -16,7 +16,7 @@ function listarClientes() {
 }
 function listarClientePorId($id) {
     $conexao = conectar();
-    $query = "select id_cliente, nome, cpf, dt_nascimento, email, senha from cliente where id_cliente=$id";
+    $query = "SELECT * FROM cliente WHERE id_cliente=$id";
     $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
     // Fecha a conexão
     mysqli_close($conexao);
@@ -35,7 +35,7 @@ function listarProdutos() {
 }
 function listarProdutoPorId($id) {
     $conexao = conectar();
-    $query = "select id_produto, nome, descricao, valor, id_categoria, id_fornecedor from produto where id_produto=$id";
+    $query = "SELECT * FROM produto WHERE id_produto=$id";
     $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
     // Fecha a conexão
     mysqli_close($conexao);
@@ -54,7 +54,7 @@ function listarProdutoParaExcluir($id) {
 }
 function listarCategorias() {
     $conexao = conectar();
-    $query = "SELECT id_categoria, nome, descricao FROM categoria ORDER BY id_categoria;";
+    $query = "SELECT * FROM categoria ORDER BY id_categoria;";
     $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
     // Fecha a conexão
     mysqli_close($conexao);
@@ -62,7 +62,7 @@ function listarCategorias() {
 }
 function listarCategoriaPorId($id) {
     $conexao = conectar();
-    $query = "select id_categoria, nome, descricao from categoria where id_categoria=$id";
+    $query = "SELECT * FROM categoria WHERE id_categoria=$id";
     $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
     // Fecha a conexão
     mysqli_close($conexao);
@@ -70,7 +70,7 @@ function listarCategoriaPorId($id) {
 }
 function listarFornecedores() {
     $conexao = conectar();
-    $query = "SELECT id_fornecedor, nome, cnpj, endereco, complemento, cidade, estado, cep FROM fornecedor ORDER BY id_fornecedor;";
+    $query = "SELECT * FROM fornecedor ORDER BY id_fornecedor;";
     $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
     // Fecha a conexão
     mysqli_close($conexao);
@@ -78,7 +78,15 @@ function listarFornecedores() {
 }
 function listarFornecedorPorId($id) {
     $conexao = conectar();
-    $query = "select id_fornecedor, nome, cnpj, endereco, complemento, cidade, estado, cep from fornecedor where id_fornecedor=$id";
+    $query = "SELECT * FROM fornecedor WHERE id_fornecedor=$id";
+    $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
+    // Fecha a conexão
+    mysqli_close($conexao);
+    return $resultado;
+}
+function listarVendas() {
+    $conexao = conectar();
+    $query = "SELECT * FROM venda";
     $resultado = mysqli_query($conexao,$query) or die('Erro de query ' . mysqli_error($conexao));
     // Fecha a conexão
     mysqli_close($conexao);

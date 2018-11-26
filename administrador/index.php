@@ -7,9 +7,14 @@
 </head>
 
 <body>  
-
   <?php include_once("header_admin.php"); ?>
-  
+  <div class="container-fluid">
+    <div class="jumbotron text-center"><br>
+      <h1 class="display-3">Olá, Administrador</h1><br>
+      <p><a class="btn btn-lg btn-success" href="vendas.php" role="button">Confira todas as vendas!</a></p>
+    </div>
+  </div>
+
 <footer class="footer">
   <div class="container">
     <span class="text-muted">Sistema Estoque </span>
