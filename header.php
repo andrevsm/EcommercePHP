@@ -10,6 +10,9 @@
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="navbar nav-link active font-weight-bold" href="venda/carrinhoDeCompras.php">Carrinho de compras</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="navbar nav-link active font-weight-bold" href="usuario/cadastrarCliente.php">Cadastre-se!</a>
                     </li>
                     <li class="nav-item">
@@ -33,7 +36,10 @@
                 </form>
                 </li>
             </ul>
-            <div class="navbar-nav mt-2 mt-md-0"><a class="navbar nav-link active font-weight-bold" href="index.php">Sistema Estoque</a></div>
+            <div class="navbar-nav mt-2 mt-md-0">
+                <a class="navbar nav-link active font-weight-bold" href="venda/carrinhoDeCompras.php">Carrinho de compras</a>
+                <a class="navbar nav-link active font-weight-bold" href="index.php">Sistema Estoque</a>
+            </div>
         </div>
     </nav>
 

@@ -21,7 +21,7 @@ $id_fornecedor = $linha['id_fornecedor'];
      <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
 <body>
-  <?php include_once("../header.php"); ?>  
+  <?php include_once("header.php"); ?>  
   <main role="main" class="container">
     <br>
     <a class="btn btn-secondary" href="../index.php">Voltar</a>  

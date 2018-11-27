@@ -23,11 +23,12 @@ if (!empty($_SESSION['carrinho'])) {
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
+                        <h1 style="text-align: center">Carrinho de Compras</h1><br>
                         <tr class="text-center">                            
                             <th scope="col">Produto</th>
                             <th scope="col">Quantidade</th>
                             <th scope="col">Preço</th>
-                            <th scope="col"></th>
+                            <th scope="col">Remover</th>
                         </tr>
                     </thead>
                     <? foreach($_SESSION['carrinho'] as $id => $qtd) {
