@@ -26,7 +26,7 @@ $senha = $senha['senha'];
   <?php include_once("header.php"); ?>  
   <main role="main" class="container">
     <br>
-    <a class="btn btn-secondary" href="clientes.php">Voltar</a>  
+    <a class="btn btn-secondary" href="index.php">Voltar</a>  
     <h1 style="text-align: center">Editar Cliente</h1>
     <form method="post" action="action/salvarCliente.php?id=<?php print $linha['id_cliente'];?>">    
       <div class="form-group">
