@@ -21,6 +21,7 @@
         <td><b>Nome</b></td>
         <td><b>CPF</b></td>
         <td><b>Data de Nascimento</b></td>
+        <td><b>E-mail</b></td>
         <td><b>Ações</b></td>
         <td><b></b></td>
       </tr>
@@ -34,6 +35,7 @@
             <td><?php echo $linha['nome']; ?></td>
             <td><?php echo $linha['cpf']; ?></td>
             <td><?php echo date('d/m/Y', strtotime($linha['dt_nascimento'])); ?></td>
+            <td><?php echo $linha['email']; ?></td>
             <td width="10px">
               <form method="post" action="editarCliente.php?id=<?php print $linha['id_cliente'];?>">
                 <input type="submit" class="btn btn-info" value="Editar"> 

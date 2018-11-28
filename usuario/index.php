@@ -11,10 +11,8 @@
     session_start(); 
   } 
   if(empty($_SESSION['cliente'])){ 
+    include_once("header.php");
     ?>  
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="../index.php">Sistema Estoque</a>
-  </nav>
   <div class="container">
     <form method="post" action="action/login.php" class="container col-5">
       <br>

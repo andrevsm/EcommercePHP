@@ -13,10 +13,10 @@
                         <a class="navbar nav-link active font-weight-bold" href="../venda/carrinhoDeCompras.php">Carrinho de compras</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar nav-link active font-weight-bold" href="usuario/cadastrarCliente.php">Cadastre-se!</a>
+                        <a class="navbar nav-link active font-weight-bold" href="cadastrarCliente.php">Cadastre-se!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar nav-link active" href="usuario/index.php">Acessar conta</a>
+                        <a class="navbar nav-link active" href="index.php">Acessar conta</a>
                     </li>
                 </ul>
             </div>
